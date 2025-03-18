@@ -1,0 +1,37 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Arial", sans-serif;
+}
+header {
+    display: flex;
+    align-items: center;
+    background: #9e9d9d;
+    color: white;
+}
+
+header img {
+    margin: 10px;
+    width: 50px;
+    height: auto;
+}
+
+header h1 {
+    font-family: sans-serif,"Arial Black";
+    font-size: 24px;
+}
+header span {
+    color: black;
+}
+
+#search {
+    padding: 8px 12px;
+    font-size: 16px;
+    border: 2px solid #777;
+    border-radius: 20px;
+    outline: none;
+    transition: 0.3s;
+    width: 500px;
+    margin-left: 800px;
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="main.css">
+<link rel="icon" type="image/png" href="img/cinema.png">
+<head>
+    <meta charset="UTF-8">
+    <title>Каса кінотеатру</title>
+</head>
+<body>
+<header>
+  <img src="img/cinema.png" alt="cinema">
+  <h1> Ticket<span>Snack</span></h1>
+  <input type="text" id="search" placeholder="Пошук фільмів.....">
+</header>
+
+<section id="filters">
+  <label for="genre">Жанр:</label>
+  <select id="genre">
+    <option value="all">Усі</option>
+    <option value="action">Бойовик</option>
+    <option value="comedy">Комедія</option>
+    <option value="drama">Драма</option>
+    <option value="rom">Романтика</option>
+    <option value="drama">Фантастика</option>
+    <option value="drama">Фентезі</option>
+  </select>
+
+  <label for="rating">Рейтинг:</label>
+  <select id="rating">
+    <option value="all">Усі</option>
+    <option value="5">5★</option>
+    <option value="4">4★</option>
+    <option value="3">3★</option>
+  </select>
+</section>
+
+<section id="movie-list">
+  <h2>Доступні фільми</h2>
+  <div class="movie">
+    <img src="img/instelar.jpg" alt="cinema">
+    <h3>Інтерстеллар</h3>
+    <p>Жанр: Фантастика</p>
+    <p>Рейтинг: ⭐⭐⭐⭐⭐</p>
+    <button class="select-movie">Обрати</button>
+  </div>
+  <div class="movie">
+    <img src="img/batman.jpg" alt="cinema">
+    <h3>Темний лицар</h3>
+    <p>Жанр: Бойовик</p>
+    <p>Рейтинг: ⭐⭐⭐⭐</p>
+    <button class="select-movie">Обрати</button>
+  </div>
+</section>
+
+<section id="seat-selection">
+  <h2>🪑 Виберіть місця</h2>
+  <div class="seats">
+    <button class="seat">1</button>
+    <button class="seat">2</button>
+    <button class="seat">3</button>
+  </div>
+</section>
+
+<section id="cart">
+  <h2>🛒 Корзина</h2>
+  <ul id="cart-items"></ul>
+  <p>Загальна вартість: <span id="total-price">0</span> грн</p>
+  <button id="checkout">Оформити замовлення</button>
+</section>
+
+</body>
+</html>
