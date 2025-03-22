@@ -8,7 +8,27 @@
     border-radius: 8px;
     max-width: 1220px;
     margin: 30px auto;
+
 }
+
+.search {
+    padding: 8px 12px;
+    font-size: 16px;
+    border: 2px solid #777;
+    border-radius: 20px;
+    outline: none;
+    transition: 0.3s;
+    width: 100%;
+    max-width: 700px;
+}
+
+.filter-group {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    width: 500px;
+}
+
 
 label {
     font-size: 16px;
@@ -53,7 +73,7 @@ option {
 
 }
 
-    #movie-list h2 {
+#movie-list h2 {
         text-align: left;
         font-size: 24px;
         color: #333;
@@ -106,13 +126,83 @@ option {
         transition: background-color 0.3s ease;
 }
 
-/* Стилі для мобільних пристроїв */
-/*жанр і рейтинг*/
-@media (max-width: 600px) {
-    #filters {
-        width: 100%;
-        padding: 15px;
-    }
+#cinema-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 600px;
+    margin: 50px auto;
+}
+
+/* Корзина ліворуч */
+#cart {
+    width: 30%;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Вибір місць праворуч */
+#seats-selection {
+    width: 65%;
+    text-align: center;
+}
+
+.screen {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.seats {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 10px;
+    justify-content: center;
+}
+
+.seat {
+    width: 40px;
+    height: 40px;
+    background-color: #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.seat.selected {
+    background-color: #28a745;
+}
+
+.seat.occupied {
+    background-color: #ff4d4d;
+    cursor: not-allowed;
+}
+#cart-items {
+    list-style: none;
+    padding: 0;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background: #f9f9f9;
+    margin-bottom: 5px;
+    border-radius: 5px;
+}
+
+.remove-btn {
+    background: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
 }
 
 

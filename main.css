@@ -25,13 +25,53 @@ header span {
     color: black;
 }
 
-#search {
-    padding: 8px 12px;
-    font-size: 16px;
-    border: 2px solid #777;
-    border-radius: 20px;
-    outline: none;
+/* Загальний контейнер футера */
+footer {
+    background: #222;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* Основний блок футера */
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1100px;
+    margin: auto;
+}
+
+/* Стилі для кожного блоку футера */
+.footer-info, .footer-links, .footer-contact {
+    flex: 1;
+    margin: 10px;
+    min-width: 250px;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin: 5px 0;
+}
+
+.footer-links a {
+    color: #bbb;
+    text-decoration: none;
     transition: 0.3s;
-    width: 500px;
-    margin-left: 800px;
+}
+
+.footer-links a:hover {
+    color: #fff;
+}
+
+/* Нижня панель футера */
+.footer-bottom {
+    background: #111;
+    padding: 10px 0;
+    margin-top: 20px;
 }
