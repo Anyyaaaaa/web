@@ -2,11 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Каса кінотеатру</title>
-    <link rel="icon" type="image/png" href="img/cinema.png">
+    <title>Кошик</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet"href="css/main.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="icon" type="image/png" href="img/cinema.png">
 </head>
+
 <header>
 
     <div class="logo">
@@ -23,23 +24,28 @@
 
     </div>
 </header>
-<body>
-<section id="cinema-container">
-<section id="seats-selection">
-    <div class="screen">Екран</div>
-    <div class="seats">
-    </div>
-</section>
 
-<!-- Корзина -->
-<section id="cart">
-    <h2>🛒 Корзина</h2>
-    <h2>Вибраний фільм: <span id="movie-title"></span></h2>
-    <ul id="cart-items"></ul>
-    <p>Загальна вартість: <span id="total-price">0</span> грн</p>
-    <button id="checkout">Оформити замовлення</button>
-</section>
-</section>
+<main>
+    <h2>Ваш кошик</h2>
+    <table>
+        <thead>
+        <tr>
+            <th>Фільм</th>
+            <th>Кількість</th>
+            <th>Ціна</th>
+            <th>Дії</th>
+        </tr>
+        </thead>
+        <tbody id="cart-items">
+        <!-- Дані будуть додані через JS -->
+        </tbody>
+    </table>
+    <p>Загальна сума: <span id="total-price">0</span> грн</p>
+    <button onclick="clearCart()">Очистити кошик</button>
+</main>
+
+
+<body>
 <footer>
     <div class="footer-container">
         <div class="footer-info">
@@ -63,9 +69,5 @@
         <p>© 2025 TicketSnack. Всі права захищені.</p>
     </div>
 </footer>
-
-
-
-<script src="js/scrTicket.js"></script>
 </body>
 </html>

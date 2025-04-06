@@ -3,19 +3,24 @@ document.addEventListener("DOMContentLoaded", function () {
     const cartItems = document.getElementById("cart-items");
     const totalPrice = document.getElementById("total-price");
     let selectedSeats = [];
+    const ticketPrice = 100;
+    const movieName = localStorage.getItem("selectedMovie") || "Не вибрано";
+    document.getElementById("movie-title").textContent = movieName;
 
-    const ticketPrice = 100; // Ціна одного квитка
+    let cartData = {
+        movie: movieName,
+        seats: [],
+        total: 0
+    };
 
-    // Генеруємо місця (8 рядів по 8 місць)
     for (let i = 1; i <= 64; i++) {
         const seat = document.createElement("div");
         seat.classList.add("seat");
-        seat.dataset.seatNumber = i; // Номер місця
+        seat.dataset.seatNumber = i;
         seat.addEventListener("click", toggleSeatSelection);
         seatsContainer.appendChild(seat);
     }
 
-    // Функція вибору/зняття вибору місця
     function toggleSeatSelection(event) {
         const seat = event.target;
         const seatNumber = seat.dataset.seatNumber;
@@ -31,7 +36,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    // Додаємо місце в корзину
     function addSeatToCart(seatNumber) {
         selectedSeats.push(seatNumber);
 
@@ -42,25 +46,39 @@ document.addEventListener("DOMContentLoaded", function () {
             <button class="remove-btn">❌</button>`;
 
         cartItems.appendChild(listItem);
-
         updateTotalPrice();
 
-        // Видалення з корзини
         listItem.querySelector(".remove-btn").addEventListener("click", function () {
             removeSeatFromCart(seatNumber);
             document.querySelector(`.seat[data-seat-number="${seatNumber}"]`).classList.remove("selected");
         });
     }
 
-    // Видаляємо місце з корзини
     function removeSeatFromCart(seatNumber) {
         selectedSeats = selectedSeats.filter(seat => seat !== seatNumber);
-        document.querySelector(`li[data-seat-number="${seatNumber}"]`).remove();
+        const listItem = document.querySelector(`li.cart-item[data-seat-number="${seatNumber}"]`);
+        if (listItem) {
+            listItem.remove();
+        }
         updateTotalPrice();
     }
 
-    // Оновлюємо загальну суму
     function updateTotalPrice() {
         totalPrice.textContent = selectedSeats.length * ticketPrice;
     }
+
+    document.getElementById("checkout").addEventListener("click", function () {
+        if (selectedSeats.length === 0) {
+            alert("Виберіть місця перед оформленням замовлення!");
+            return;
+        }
+
+        cartData = {
+            movie: movieName,
+            seats: selectedSeats,
+            total: selectedSeats.length * ticketPrice
+        };
+        alert("Замовлення оформлено! Дані збережено у JSON-змінну.");
+        console.log("Дані замовлення:", cartData);
+    });
 });

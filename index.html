@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="main.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/main.css">
 <link rel="icon" type="image/png" href="img/cinema.png">
 <head>
     <meta charset="UTF-8">
@@ -9,12 +9,24 @@
 
 </head>
 <body>
+
 <header>
-  <img src="img/cinema.png" alt="cinema">
+
+  <div class="logo">
+    <img src="img/movie.png" alt="cinema">
+  </div>
   <h1> Ticket<span>Snack</span></h1>
+  <div class="ac">
+    <button class="account-btn" onclick="window.location.href='shoppingСart.html'">
+    <img src="img/ticket.png" alt="cinema">
+  </button>
+    <button class="account-btn" onclick="window.location.href='Account.html'">
+      <img src="img/account.png" alt="account">
+    </button>
 
+  </div>
 </header>
-
+<script src="js/scrIndex.js"></script>
 <div id="filters">
   <input type="text" class="search" placeholder="Пошук фільмів...">
   <div class="filter-group">
@@ -22,74 +34,102 @@
       <option value="">Виберіть жанр</option>
       <option value="action">Бойовик</option>
       <option value="comedy">Комедія</option>
+      <option value="adventure">Пригоди</option>
+      <option value="fantasy">Фантастика</option>
+      <option value="sci-fi">Наукова фантастика</option>
+
     </select>
     <select id="rating">
       <option value="">Виберіть рейтинг</option>
-      <option value="5">5+</option>
-      <option value="7">7+</option>
+      <option value="5">⭐⭐⭐⭐⭐</option>
+      <option value="4">⭐⭐⭐⭐</option>
+      <option value="3">⭐⭐⭐</option>
+      <option value="2">⭐⭐</option>
     </select>
   </div>
 </div>
 
 <section id="movie-list">
-  <h2>Доступні фільми</h2>
-  <div class="movie" data-movie="Інтерстеллар">
+  <div class="movie" data-movie="Інтерстеллар" data-genre="fantasy" data-rating="5">
     <img src="img/instelar.jpg" alt="cinema">
     <h3>Інтерстеллар</h3>
     <p>Жанр: Фантастика</p>
     <p>Рейтинг: ⭐⭐⭐⭐⭐</p>
-    <button class="select-movie" onclick="window.location.href='ticket.html';">Обрати</button>
+    <div class="button">
+    <button onclick="selectMovie('Інтерстеллар')">Обрати</button>
+    </div>
   </div>
-  <div class="movie">
+  <div class="movie" data-movie="Темний лицар" data-genre="action" data-rating="4">
     <img src="img/batman.jpg" alt="cinema">
     <h3>Темний лицар</h3>
     <p>Жанр: Бойовик</p>
     <p>Рейтинг: ⭐⭐⭐⭐</p>
-    <button class="select-movie">Обрати</button>
+    <div class="button">
+    <button onclick="selectMovie('Темний лицар')">Обрати</button>
+    </div>
   </div>
-  <div class="movie">
+  <div class="movie" data-movie="Загін самогубців" data-genre="action" data-rating="4">
     <img src="img/otpad.jpg" alt="cinema">
     <h3>Загін самогубців</h3>
     <p>Жанр: Бойовик</p>
     <p>Рейтинг: ⭐⭐⭐⭐</p>
-    <button class="select-movie">Обрати</button>
+    <div class="button">
+    <button onclick="selectMovie('Загін самогубців')">Обрати</button>
+    </div>
   </div>
-  <div class="movie">
+  <div class="movie" data-movie="2012" data-genre="sci-fi" data-rating="3">
     <img src="img/2012.jpg" alt="cinema">
     <h3>2012</h3>
     <p>Жанр: Наукова фантастика</p>
     <p>Рейтинг: ⭐⭐⭐</p>
-    <button class="select-movie">Обрати</button>
+    <div class="button">
+    <button onclick="selectMovie('2012')">Обрати</button>
+    </div>
   </div>
-  <div class="movie">
+  <div class="movie" data-movie="Лара Крофт: Розкрадачка гробниць" data-genre="adventure" data-rating="4">
     <img src="img/lara.jpg" alt="cinema">
     <h3>Лара Крофт: Розкрадачка гробниць</h3>
     <p>Жанр: Пригоди</p>
     <p>Рейтинг: ⭐⭐⭐⭐</p>
-    <button class="select-movie">Обрати</button>
+    <div class="button">
+    <button onclick="selectMovie('Лара Крофт: Розкрадачка гробниць')">Обрати</button>
+    </div>
   </div>
-  <div class="movie">
+  <div class="movie" data-movie="Веном" data-genre="fantasy" data-rating="5">
     <img src="img/venom.jpg" alt="cinema">
     <h3>Веном</h3>
     <p>Жанр: Фантастика</p>
     <p>Рейтинг: ⭐⭐⭐⭐⭐</p>
-    <button class="select-movie">Обрати</button>
+    <div class="button">
+    <button onclick="selectMovie('Веном')">Обрати</button>
+    </div>
   </div>
-  <div class="movie">
+  <div class="movie" data-movie="Незвідане: на картах не значиться" data-genre="adventure" data-rating="5">
     <img src="img/u.jpg" alt="cinema">
     <h3>Незвідане: на картах не значиться</h3>
     <p>Жанр: Пригоди</p>
     <p>Рейтинг: ⭐⭐⭐⭐⭐</p>
-    <button class="select-movie">Обрати</button>
+    <div class="button">
+    <button onclick="selectMovie('Незвідане: на картах не значиться')">Обрати</button>
+    </div>
   </div>
-  <div class="movie">
+  <div class="movie" data-movie="Потрійний форсаж: Токійський дрифт" data-genre="action" data-rating="5">
     <img src="img/fast.jpg" alt="cinema">
     <h3>Потрійний форсаж: Токійський дрифт</h3>
-    <p>Жанр: Екшн</p>
+    <p>Жанр: Бойовик</p>
     <p>Рейтинг: ⭐⭐⭐⭐⭐</p>
-    <button class="select-movie">Обрати</button>
+    <div class="button">
+    <button onclick="selectMovie('Потрійний форсаж: Токійський дрифт')">Обрати</button>
+    </div>
   </div>
 </section>
+
+<script>
+  function selectMovie(movieName) {
+    localStorage.setItem("selectedMovie", movieName);
+    window.location.href = "ticket.html";
+  }
+</script>
 
 <footer>
   <div class="footer-container">
@@ -101,6 +141,7 @@
       <h4>Корисні посилання</h4>
       <ul>
         <li><a href="index.html">Головна</a></li>
+        <li><a href="shoppingСart.html">Корзина</a></li>
 
       </ul>
     </div>
@@ -113,6 +154,7 @@
     <p>© 2025 TicketSnack. Всі права захищені.</p>
   </div>
 </footer>
+
 
 
 </body>
